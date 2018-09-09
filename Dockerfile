@@ -5,6 +5,8 @@ RUN apt-get update && \
 
 RUN echo "net.ipv4.ip_forward = 1" >> /etc/sysctl.conf
 
+COPY config /root/.ssh
+
 COPY start.sh ./
 
 CMD ["./start.sh"]
